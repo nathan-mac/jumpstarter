@@ -21,6 +21,3 @@ router.post(
 );
 
 module.exports = router;
-
-// shExbH9u-sMUeWEx29HIMxiy2RqiWMSRuQXQ
-
