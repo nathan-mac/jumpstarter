@@ -3,11 +3,11 @@ module.exports = (sequelize, DataTypes) => {
   const Reward = sequelize.define('Reward', {
     projectId: {
       type: DataTypes.INTEGER,
-      allowNull: false
-    },
-    userId: {
-      type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: false,
+      references: {
+        model: "Projects",
+        key: "id"
+      }
     },
     amount: {
       type: DataTypes.DECIMAL,

@@ -16,8 +16,8 @@ module.exports = {
         totalPledged: 0
       },
       {
-        firstName: 'Fake',
-        lastName: 'User',
+        firstName: faker.name.firstName(),
+        lastName: faker.name.lastName(),
         email: faker.internet.email(),
         username: 'FakeUser1',
         hashedPassword: bcrypt.hashSync(faker.internet.password()),
@@ -26,8 +26,8 @@ module.exports = {
         totalPledged: 0
       },
       {
-        firstName: 'Fake',
-        lastName: 'User',
+        firstName: faker.name.firstName(),
+        lastName: faker.name.lastName(),
         email: faker.internet.email(),
         username: 'FakeUser2',
         hashedPassword: bcrypt.hashSync(faker.internet.password()),

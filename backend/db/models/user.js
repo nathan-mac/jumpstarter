@@ -67,10 +67,7 @@ module.exports = (sequelize, DataTypes) => {
         isDecimal: true,
         min: 0
       },
-    },
-    rewardId: {
-      type: DataTypes.INTEGER
-    },
+    }
   },
   {
     defaultScope: {

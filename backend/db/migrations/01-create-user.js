@@ -42,9 +42,6 @@ module.exports = {
         type: Sequelize.DECIMAL(9,2),
         allowNull: false
       },
-      rewardId: {
-        type: Sequelize.INTEGER
-      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
