@@ -16,6 +16,20 @@ module.exports = (sequelize, DataTypes) => {
         },
       },
     },
+    firstName: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        leng: [1, 30]
+      },
+    },
+    lastName: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        leng: [1, 30]
+      },
+    },
     email: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -29,6 +43,33 @@ module.exports = (sequelize, DataTypes) => {
       validate: {
         len: [60, 60]
       },
+    },
+    projectsSupported: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      validate: {
+        isInt: true,
+        min: 0
+      },
+    },
+    projectsOwned: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      validate: {
+        isInt: true,
+        min: 0
+      },
+    },
+    totalPledged: {
+      type: DataTypes.DECIMAL,
+      allowNull: false,
+      validate: {
+        isDecimal: true,
+        min: 0
+      },
+    },
+    rewardId: {
+      type: DataTypes.INTEGER
     },
   },
   {
@@ -86,7 +127,12 @@ module.exports = (sequelize, DataTypes) => {
   };
 
   User.associate = function(models) {
-    // associations can be defined here
+    User.hasMany(models.Project, { foreignKey: "userId" });
+    User.belongsToMany(models.Reward, {
+      through: "UserReward",
+      otherKey: "rewardId",
+      foreignKey: "userId"
+    })
   };
   return User;
 };

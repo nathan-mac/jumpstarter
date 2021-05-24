@@ -8,6 +8,14 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
+      firstName: {
+        type: Sequelize.STRING(30),
+        allowNull: false
+      },
+      lastName: {
+        type: Sequelize.STRING(30),
+        allowNull: false
+      },
       username: {
         type: Sequelize.STRING(30),
         allowNull: false,
@@ -21,6 +29,21 @@ module.exports = {
       hashedPassword: {
         type: Sequelize.STRING.BINARY,
         allowNull: false,
+      },
+      projectsSupported: {
+        type: Sequelize.INTEGER,
+        allowNull: false
+      },
+      projectsOwned: {
+        type: Sequelize.INTEGER,
+        allowNull: false
+      },
+      totalPledged: {
+        type: Sequelize.DECIMAL(9,2),
+        allowNull: false
+      },
+      rewardId: {
+        type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,
