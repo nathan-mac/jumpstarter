@@ -13,7 +13,7 @@ module.exports = {
       {
         name: 'Demo Project',
         description: "hello test",
-        userId: 0,
+        userId: 1,
         goal: 10000,
         startDate: new Date(),
         endDate: "2021-05-24T21:51:37.687Z",
@@ -24,7 +24,7 @@ module.exports = {
       {
         name: faker.commerce.productName(),
         description: faker.commerce.productDescription(),
-        userId: 1,
+        userId: 2,
         goal: 10000,
         startDate: faker.datatype.datetime(),
         endDate: faker.datatype.datetime(),
@@ -35,7 +35,7 @@ module.exports = {
       {
         name: faker.commerce.productName(),
         description: faker.commerce.productDescription(),
-        userId: 2,
+        userId: 3,
         goal: 1000,
         startDate: faker.datatype.datetime(),
         endDate: faker.datatype.datetime(),

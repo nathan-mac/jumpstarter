@@ -19,10 +19,10 @@ module.exports = {
       userId: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        // references: {
-        //   model: "Users",
-        //   key: "id"
-        // }
+        references: {
+          model: "Users",
+          key: "id"
+        }
       },
       goal: {
         type: Sequelize.DECIMAL(9,2),
