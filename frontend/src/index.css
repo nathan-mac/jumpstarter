@@ -1,1 +1,11 @@
-/* TODO Add site wide styles */
+* {
+    font-family: "Roboto", sans-serif;
+}
+
+body {
+    background-color: blanchedalmond;
+}
+
+.navbar {
+    background-color: bisque;
+}
