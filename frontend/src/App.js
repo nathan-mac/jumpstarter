@@ -3,14 +3,21 @@ import { useDispatch } from "react-redux";
 import { Route, Switch } from "react-router-dom";
 import LoginFormPage from "./components/LoginFormPage";
 import SignupFormPage from "./components/SignupFormPage";
+import ProjectListingPage from "./components/ProjectListingPage";
+import ProjectPage from "./components/ProjectPage";
+import NewProjectPage from "./components/NewProjectPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
+import { getAllProjects } from "./store/projects";
+import { getAllUsers } from "./store/users";
 
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
+    dispatch(getAllUsers());
+    dispatch(getAllProjects());
   }, [dispatch]);
 
   return (
@@ -23,6 +30,15 @@ function App() {
           </Route>
           <Route path="/signup">
             <SignupFormPage />
+          </Route>
+          <Route exact path="/projects">
+            <ProjectListingPage />
+          </Route>
+          <Route exact path="/projects/:id">
+            <ProjectPage />
+          </Route>
+          <Route exact path="/projects/new">
+            <NewProjectPage />
           </Route>
         </Switch>
       )}

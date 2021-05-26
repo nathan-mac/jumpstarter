@@ -42,6 +42,21 @@ router.post(
         user,
       });
     }),
-  );
+);
+
+router.get("/", asyncHandler(async (req, res) => {
+  const users = await User.findAll({
+    order: [["id", "ASC"]]
+  })
+  return res.json(users);
+}))
+
+router.get("/:id", asyncHandler(async (req, res) => {
+  const userId = parseInt(req.params.id, 10);
+  const user = await User.findOne({
+    where: { id: userId }
+  })
+  return res.json(user);
+}))
 
 module.exports = router;

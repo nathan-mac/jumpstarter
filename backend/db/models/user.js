@@ -18,14 +18,12 @@ module.exports = (sequelize, DataTypes) => {
     },
     firstName: {
       type: DataTypes.STRING,
-      allowNull: false,
       validate: {
         leng: [1, 30]
       },
     },
     lastName: {
       type: DataTypes.STRING,
-      allowNull: false,
       validate: {
         leng: [1, 30]
       },
@@ -46,7 +44,6 @@ module.exports = (sequelize, DataTypes) => {
     },
     projectsSupported: {
       type: DataTypes.INTEGER,
-      allowNull: false,
       validate: {
         isInt: true,
         min: 0
@@ -54,7 +51,6 @@ module.exports = (sequelize, DataTypes) => {
     },
     projectsOwned: {
       type: DataTypes.INTEGER,
-      allowNull: false,
       validate: {
         isInt: true,
         min: 0
@@ -62,7 +58,6 @@ module.exports = (sequelize, DataTypes) => {
     },
     totalPledged: {
       type: DataTypes.DECIMAL,
-      allowNull: false,
       validate: {
         isDecimal: true,
         min: 0
