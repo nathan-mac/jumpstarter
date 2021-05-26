@@ -8,9 +8,16 @@ function NewProjectPage() {
     const sessionUser = useSelector((state) => state.session.user);
     const [errors, setErrors] = useState([]);
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if () {
+            setErrors([]);
+            return()
+        }
+    }
+
     return (
         <form onSubmit={handleSubmit}>
-
         </form>
     )
 }
