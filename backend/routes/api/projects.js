@@ -21,6 +21,13 @@ router.get("/:id", asyncHandler(async (req, res) => {
     return res.json(project);
 }))
 
+router.post("/new", asyncHandler(async (req, res) => {
+    const data = req.body;
+    console.log(data);
+    const newProject = await Project.create(data);
+    return res.json(newProject);
+}))
+
 router.get("/:id/support", asyncHandler(async (req, res) => {
     const projectId = parseInt(req.params.id, 10);
 
@@ -29,5 +36,6 @@ router.get("/:id/support", asyncHandler(async (req, res) => {
     })
     return res.json(project);
 }))
+
 
 module.exports = router;

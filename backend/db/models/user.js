@@ -19,13 +19,13 @@ module.exports = (sequelize, DataTypes) => {
     firstName: {
       type: DataTypes.STRING,
       validate: {
-        leng: [1, 30]
+        len: [1, 30]
       },
     },
     lastName: {
       type: DataTypes.STRING,
       validate: {
-        leng: [1, 30]
+        len: [1, 30]
       },
     },
     email: {

@@ -18,7 +18,9 @@ function ProjectPage() {
     }, [dispatch, id])
 
     useEffect(() => {
-        dispatch(getOneUser(project.userId))
+        if (project.userId) {
+            dispatch(getOneUser(project.userId))
+        }
     }, [dispatch, project])
 
     return (
