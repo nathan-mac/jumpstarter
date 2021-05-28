@@ -8,6 +8,7 @@ import ProjectListingPage from "./components/ProjectListingPage";
 import ProjectPage from "./components/ProjectPage";
 import NewProjectPage from "./components/NewProjectPage";
 import NotLoggedInPage from "./components/NotLoggedInPage";
+import HomePage from "./components/HomePage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import { getAllProjects } from "./store/projects";
@@ -50,6 +51,9 @@ function App() {
           </Route>
           <Route exact path="/projects/:id">
             <ProjectPage />
+          </Route>
+          <Route exact path="/">
+            <HomePage />
           </Route>
         </Switch>
       )}

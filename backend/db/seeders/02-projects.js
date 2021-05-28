@@ -23,7 +23,7 @@ module.exports = {
       },
       {
         name: faker.commerce.productName(),
-        description: faker.commerce.productDescription(),
+        description: faker.lorem.paragraphs(),
         userId: 2,
         goal: 10000,
         startDate: faker.datatype.datetime(),
@@ -34,7 +34,7 @@ module.exports = {
       },
       {
         name: faker.commerce.productName(),
-        description: faker.commerce.productDescription(),
+        description: faker.lorem.paragraphs(),
         userId: 3,
         goal: 1000,
         startDate: faker.datatype.datetime(),

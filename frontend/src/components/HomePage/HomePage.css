@@ -5,13 +5,13 @@ div.header {
     height: 180px;
 }
 
-div.header a {
+div.header p {
     font-size: 36pt;
     font-family: cursive;
     color:goldenrod;
 }
 
-div.create-project {
+div.description {
     display: flex;
     justify-content: center;
     align-items: center;

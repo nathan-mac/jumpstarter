@@ -1,0 +1,16 @@
+button {
+    height:fit-content;
+}
+
+.profile-container {
+    width: auto;
+    height: auto;
+    position: sticky;
+    top: 0px;
+    z-index: 2;
+    background-color: bisque;
+    border-radius: 2em;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}

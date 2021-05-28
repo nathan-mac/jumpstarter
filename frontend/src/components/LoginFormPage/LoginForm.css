@@ -1,0 +1,32 @@
+.hidden {
+    display: none
+}
+
+div.form-container {
+    display: flex;
+    justify-content: flex-start;
+}
+
+div.form-input {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr, 1fr;
+    padding: 10px;
+}
+
+div.form-input label {
+    grid-column-start: 0;
+}
+
+div.form-input input {
+    grid-column-start: 1;
+    width: 250px;
+}
+
+button {
+    margin: 10px;
+}
+
+div.demo-login {
+    margin: 10px;
+}

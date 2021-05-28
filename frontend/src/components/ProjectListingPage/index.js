@@ -8,19 +8,28 @@ function ProjectListingPage() {
     const projects = useSelector((state) => state.projects.all);
 
     return (
-        <div className="projects-container">
-            <a href="/projects/new">Create a Project</a>
-            {
-                projects.map((project) => {
-                    return (
-                        <div key={`${project.id}`} className="projects-item">
-                            <a className="projects-item-title">{project.name}</a>
-                            <a className="projects-item-link" href={`/projects/${project.id}`}>link</a>
-                        </div>
-                    )
-                })
-            }
-        </div>
+        <>
+            <div className="header">
+                <a href="/">JumpStarter</a>
+            </div>
+            <div className="create-project">
+                <a className="create-project" href="/projects/new">Create a Project</a>
+            </div>
+            <div className="projects-container">
+                <p>Explore these projects!</p>
+                {
+                        projects.map((project) => {
+                            return (
+                                <div key={`${project.id}`} className="projects-items">
+                                    <span className="projects-status">{project.projectStatus}</span>
+                                    <a className="projects-item" href={`/projects/${project.id}`}>{project.name}</a>
+                                    <span className="projects-funds">{`$${project.pledged} / $${project.goal} Pledged`}</span>
+                                </div>
+                            )
+                        })
+                    }
+            </div>
+        </>
     )
 }
 

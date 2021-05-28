@@ -2,7 +2,8 @@ import * as sessionActions from '../../store/session';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Redirect } from 'react-router';
-import { useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom';
+import "./DemoLogin.css"
 
 function DemoLogin() {
     const dispatch = useDispatch();
@@ -20,16 +21,20 @@ function DemoLogin() {
             });
     }
     return (
-        <form onSubmit={handleSubmit}>
-            <ul className="errors">
-                {errors.map((error, idx) => <li key={idx}>{error}</li>)}
-            </ul>
-            <p>Login as Demo User?</p>
-            <div>
-                <button type="submit">Log in</button>
-                <a href="/login">Cancel</a>
-            </div>
-        </form>
+        <div className="form-container">
+            <form onSubmit={handleSubmit}>
+                <ul className="errors">
+                    {errors.map((error, idx) => <li key={idx}>{error}</li>)}
+                </ul>
+                <div className="login-prompt">
+                    <p>Login as Demo User?</p>
+                </div>
+                <div className="login-confirm">
+                    <button type="submit">Log in</button>
+                    <a href="/login">Cancel</a>
+                </div>
+            </form>
+        </div>
     )
 }
 

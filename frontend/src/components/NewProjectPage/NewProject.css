@@ -1,3 +1,32 @@
 .hidden {
     display: none
 }
+
+div.form-container {
+    display: flex;
+    justify-content: flex-start;
+}
+
+div.project-form-input {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr, 1fr;
+    padding: 10px;
+}
+
+div.project-form-input label {
+    grid-column-start: 0;
+}
+
+div.project-form-input input {
+    grid-column-start: 1;
+    width: 600px;
+}
+
+div.project-form-input textarea {
+    width: 600px;
+}
+
+button {
+    margin: 10px;
+}

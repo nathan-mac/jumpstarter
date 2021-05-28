@@ -41,101 +41,103 @@ function NewProjectPage() {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            <ul className="errors">
-                {errors.map((error, idx) => <li key={idx}>{error}</li>)}
-            </ul>
-            <div className="form-input">
-                <label>
-                    Name
+        <div className="form-container">
+            <form onSubmit={handleSubmit}>
+                <ul className="errors">
+                    {errors.map((error, idx) => <li key={idx}>{error}</li>)}
+                </ul>
+                <div className="project-form-input">
+                    <label>
+                        Name
+                    </label>
                     <input
                         type="text"
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                         required>
                     </input>
-                </label>
-            </div>
-            <div className="form-input">
-                <label>
-                    Description
-                    <input
-                        type="textarea"
+                </div>
+                <div className="project-form-input">
+                    <label>
+                        Description
+                    </label>
+                    <textarea
                         value={description}
                         onChange={(e) => setDescription(e.target.value)}
                         required>
-                    </input>
-                </label>
-            </div>
-            <div className="hidden">
-                <label>
-                    User Id
+                    </textarea>
+                </div>
+                <div className="hidden">
+                    <label>
+                        User Id
+                    </label>
                     <input
                         type="number"
                         value={sessionUser.id}>
                     </input>
-                </label>
-            </div>
-            <div className="form-input">
-                <label>
-                    Goal
+                </div>
+                <div className="project-form-input">
+                    <label>
+                        Goal
+                    </label>
                     <input
                         type="number"
                         value={goal}
                         onChange={(e) => setGoal(e.target.value)}
                         required>
                     </input>
-                </label>
-            </div>
-            <div className="hidden">
-                <label>
-                    Start Date
+                </div>
+                <div className="hidden">
+                    <label>
+                        Start Date
+                    </label>
                     <input
                         type="date"
                         value={startDate}>
                     </input>
-                </label>
-            </div>
-            <div className="form-input">
-                <label>
-                    End Date
+                </div>
+                <div className="project-form-input">
+                    <label>
+                        End Date
+                    </label>
                     <input
                         type="date"
                         value={endDate}
                         onChange={(e) => setEndDate(e.target.value)}
                         required>
                     </input>
-                </label>
-            </div>
-            <div className="hidden">
-                <label>
-                    Pledged
+                </div>
+                <div className="hidden">
+                    <label>
+                        Pledged
+                    </label>
                     <input
                         type="number"
                         value={pledged}>
                     </input>
-                </label>
-            </div>
-            <div className="hidden">
-                <label>
-                    Investors
+                </div>
+                <div className="hidden">
+                    <label>
+                        Investors
+                    </label>
                     <input
                         type="number"
                         value={investors}>
                     </input>
-                </label>
-            </div>
-            <div className="hidden">
-                <label>
-                    projectStatus
+                </div>
+                <div className="hidden">
+                    <label>
+                        projectStatus
+                    </label>
                     <input
                         type="text"
                         value={projectStatus}>
                     </input>
-                </label>
-            </div>
-            <button type="submit">Create Project</button>
-        </form>
+                </div>
+                <button type="submit">Create Project</button>
+                <a href="/projects">Cancel</a>
+            </form>
+        </div>
     )
 }
 
